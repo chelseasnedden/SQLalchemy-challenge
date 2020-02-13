@@ -9,36 +9,36 @@ from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
 
-# Database Setup
+# Setup Database
 engine = create_engine("sqlite:///hawaii.sqlite")
 
-# Reflect an existing database into a new model
+# Reflect existing database
 Base = automap_base()
 # Reflect the tables
 Base.prepare(engine, reflect=True)
 
-# Save reference to the table
+# Save table reference
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
 # Create session
 session = Session(engine)
 
-# Flask setup
+# Setup Flask
 app = Flask(__name__)
 
-# Getting a list of dates for the last 12 months
+# Getting a list of dates - last 12 months
 base_date = datetime.datetime.strptime("2017-08-23", "%Y-%m-%d")
 numdays = 365
 date_list = [base_date - datetime.timedelta(days=x) for x in range(0, numdays)]
 
-# Converting them to a list of strings
+# Converting dates to a list of strings
 str_dates = []
 for date in date_list:
     new_date = date.strftime("%Y-%m-%d")
     str_dates.append(new_date)
 
-# Flask Routes
+# Flask Route
 @app.route("/")
 def welcome():
     return (
@@ -65,7 +65,7 @@ def precipitation():
 @app.route("/api/v1.0/stations")
 def stations():
 
-    # Query stations
+    # Station Queries
     results = session.query(Station)
 
     station_data = []
@@ -80,7 +80,7 @@ def stations():
 @app.route("/api/v1.0/tobs")
 def tobs():
 
-    # Query temperatures
+    # Temperature Queries
     results = session.query(Measurement).filter(Measurement.date.in_(str_dates))
 
     temp_data = []
