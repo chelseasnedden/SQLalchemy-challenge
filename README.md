@@ -11,5 +11,5 @@
 #### :diamonds: Step 2 - Climate App - designing a Flask API based on the queries that you have just developed.
 ---
 
-## How to run: Download the Queries_SQL file into a SQL database of your choosing (I used PGAdmin4) and add the CSVs provided in this GitHub.
-:ok_hand: :ok_hand: :ok_hand:
+#### How to run: Download the Climate_CPS file into a folder of your choosing (I used Downloads) and open IUsing Jupyter Notebook to see my code and how I solved each problem provided in this GitHub.
+
