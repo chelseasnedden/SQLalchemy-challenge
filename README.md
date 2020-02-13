@@ -1,7 +1,7 @@
 # SQLalchemy-challenge
 ## Background
 
-"Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do."
+## "Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do."
 
 ## In this assignment, I am designing the tables to hold data in the CSVs, importing the CSVs into a SQL database, and answering questions about the data. In other words, I will perform:
 
